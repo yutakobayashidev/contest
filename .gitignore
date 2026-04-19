@@ -5,3 +5,5 @@ __pycache__/
 .venv/
 .direnv/
 result
+.pre-commit-config.yaml
+acc-config/session.json

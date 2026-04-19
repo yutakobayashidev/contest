@@ -1,19 +1,8 @@
 #!/usr/bin/env python3
 
-import sys
-
-
-def input() -> str:
-    return sys.stdin.readline().rstrip()
-
-
-def ints() -> list[int]:
-    return list(map(int, input().split()))
-
-
-def main() -> None:
-    pass
-
-
-if __name__ == "__main__":
-    main()
+S = input()
+N = int(input())
+S = input().split()
+A, B, C = input().split()
+L = list(map(int, input().split()))
+H, N = map(int, input().split())
