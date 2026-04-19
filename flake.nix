@@ -94,7 +94,7 @@
               config.treefmt.build.wrapper
               pkgs.uv
               pkgs.ruff
-              pkgs.basedpyright
+              pkgs.ty
               pkgs.online-judge-tools
               atcoder-cli
             ];

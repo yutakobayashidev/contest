@@ -26,7 +26,7 @@ oj login https://atcoder.jp/
 - `python3`
 - `uv`
 - `ruff`
-- `basedpyright`
+- `ty`
 - `pre-commit`
 - `oj`
 - `acc`
@@ -39,6 +39,7 @@ cd contests
 acc new abc123
 cd abc123/a
 touch main.py
+ty check
 oj test -c "python3 main.py"
 acc submit main.py
 ```
