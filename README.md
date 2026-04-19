@@ -17,6 +17,7 @@ The repo-managed `acc-config/` is linked into `acc config-dir` automatically.
 ## First Login
 
 ```bash
+aclogin
 acc check-oj
 acc login
 oj login https://atcoder.jp/
@@ -32,6 +33,7 @@ acc templates
 - `pre-commit`
 - `oj`
 - `acc`
+- `aclogin`
 
 ## Template
 
