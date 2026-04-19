@@ -92,6 +92,7 @@
             packages = [
               python
               config.treefmt.build.wrapper
+              pkgs.coreutils
               pkgs.uv
               pkgs.ruff
               pkgs.ty
@@ -108,6 +109,9 @@
               export UV_PROJECT_ENVIRONMENT="$PWD/.venv"
 
               if command -v acc >/dev/null && command -v oj >/dev/null; then
+                acc_config_dir="$(acc config-dir)"
+                [ -e "$acc_config_dir" ] && rm -rf "$acc_config_dir"
+                ln -s "$ROOT/acc-config" "$acc_config_dir"
                 acc config oj-path "$(command -v oj)" >/dev/null 2>&1 || true
               fi
             '';
