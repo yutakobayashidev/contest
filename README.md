@@ -13,6 +13,14 @@ nix flake check
 `acc` is configured to use `oj` automatically from the dev shell.
 `pre-commit` hooks are installed automatically when you enter the dev shell.
 
+## First Login
+
+```bash
+acc check-oj
+acc login
+oj login https://atcoder.jp/
+```
+
 ## Tools
 
 - `python3`
@@ -30,7 +38,7 @@ mkdir -p contests
 cd contests
 acc new abc123
 cd abc123/a
-oj d https://atcoder.jp/contests/abc123/tasks/abc123_a
-python3 main.py
+touch main.py
 oj test -c "python3 main.py"
+acc submit main.py
 ```
