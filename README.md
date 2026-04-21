@@ -35,6 +35,11 @@ acc templates
 - `acc`
 - `aclogin`
 
+## Nix Layout
+
+- Local overlays live directly under `nix/`.
+- Keep one overlay per file and register it from `nix/default.nix`.
+
 ## Template
 
 `acc new` uses the managed config in [acc-config/config.json](/Users/yuta/ghq/github.com/yutakobayashidev/contest/acc-config/config.json) and the `py` template in [acc-config/py/main.py](/Users/yuta/ghq/github.com/yutakobayashidev/contest/acc-config/py/main.py) and [acc-config/py/template.json](/Users/yuta/ghq/github.com/yutakobayashidev/contest/acc-config/py/template.json).

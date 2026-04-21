@@ -35,50 +35,17 @@
       ];
 
       perSystem =
-        { pkgs, config, ... }:
+        { system, config, ... }:
         let
+          pkgs = import nixpkgs {
+            inherit system;
+            overlays = import ./nix;
+          };
           python = pkgs.python312;
-          pyPkgs = python.pkgs;
-
-          atcoder-cli = pkgs.buildNpmPackage {
-            pname = "atcoder-cli";
-            version = "2.2.0";
-            nodejs = pkgs.nodejs_20;
-            npmInstallFlags = [ "--omit=optional" ];
-            npmPruneFlags = [ "--omit=optional" ];
-
-            src = pkgs.fetchFromGitHub {
-              owner = "Tatamo";
-              repo = "atcoder-cli";
-              rev = "f385e71ba270716f5a94e3ed9bd23a24f78799d0";
-              hash = "sha256-7pbCTgWt+khKVyMV03HanvuOX2uAC0PL9OLmqly7IWE=";
-            };
-
-            npmDepsHash = "sha256-ufG7Fq5D2SOzUp8KYRYUB5tYJYoADuhK+2zDfG0a3ks=";
-            npmPackFlags = [ "--ignore-scripts" ];
-            NODE_OPTIONS = "--openssl-legacy-provider";
-          };
-
-          aclogin = pyPkgs.buildPythonApplication rec {
-            pname = "aclogin";
-            version = "0.0.1";
-            format = "setuptools";
-
-            src = pkgs.fetchFromGitHub {
-              owner = "key-moon";
-              repo = "aclogin";
-              rev = "e461311c0326578b16d1488be84261f4b24f6134";
-              hash = "sha256-kyU7KpFenFb7obwSrDp6dPfuE+36r0BGYerrJj3+EyA=";
-            };
-
-            propagatedBuildInputs = with pyPkgs; [
-              appdirs
-              requests
-              setuptools
-            ];
-          };
         in
         {
+          _module.args.pkgs = pkgs;
+
           treefmt = {
             projectRootFile = "flake.nix";
             programs = {
@@ -120,8 +87,8 @@
               pkgs.ruff
               pkgs.ty
               pkgs.online-judge-tools
-              atcoder-cli
-              aclogin
+              pkgs.atcoder-cli
+              pkgs.aclogin
             ];
 
             shellHook = ''
