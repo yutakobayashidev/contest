@@ -15,12 +15,14 @@
       url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur-packages.url = "github:yutakobayashidev/nur-packages";
   };
 
   outputs =
     inputs@{
       flake-parts,
       nixpkgs,
+      nur-packages,
       ...
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
@@ -39,7 +41,7 @@
         let
           pkgs = import nixpkgs {
             inherit system;
-            overlays = import ./nix;
+            overlays = [ nur-packages.overlays.default ];
           };
           python = pkgs.python312;
         in
@@ -89,6 +91,7 @@
               pkgs.online-judge-tools
               pkgs.atcoder-cli
               pkgs.aclogin
+              pkgs.acac-cli
             ];
 
             shellHook = ''

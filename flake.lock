@@ -95,11 +95,46 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1780243769,
+        "narHash": "sha256-x5UQuRsH3MqI0U9afaXSNqzTPSeZlRLvFAav2Ux1pNw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "331800de5053fcebacf6813adb5db9c9dca22a0c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nur-packages": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1782116953,
+        "narHash": "sha256-uUNuOR1gsTE5RWC//zSxrCvwHNa9Kd537d5OW8vXt1w=",
+        "owner": "yutakobayashidev",
+        "repo": "nur-packages",
+        "rev": "89c00df7b08923b8017a419bee1cebf175d45666",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yutakobayashidev",
+        "repo": "nur-packages",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
         "git-hooks": "git-hooks",
         "nixpkgs": "nixpkgs",
+        "nur-packages": "nur-packages",
         "treefmt-nix": "treefmt-nix"
       }
     },

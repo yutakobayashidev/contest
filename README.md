@@ -34,11 +34,11 @@ acc templates
 - `oj`
 - `acc`
 - `aclogin`
+- `acac`
 
 ## Nix Layout
 
-- Local overlays live directly under `nix/`.
-- Keep one overlay per file and register it from `nix/default.nix`.
+- Workspace packages come from the `github:yutakobayashidev/nur-packages` flake input.
 
 ## Template
 
