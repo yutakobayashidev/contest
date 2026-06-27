@@ -1,5 +1,5 @@
 {
-  description = "AtCoder Python workspace";
+  description = "AtCoder Python and Gleam workspace";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -92,6 +92,8 @@
               pkgs.atcoder-cli
               pkgs.aclogin
               pkgs.acac-cli
+              pkgs.gleam
+              pkgs.erlang
             ];
 
             shellHook = ''

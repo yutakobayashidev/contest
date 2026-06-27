@@ -1,6 +1,6 @@
 # contest
 
-Competitive programming contest workspace for Python.
+Competitive programming contest workspace for Python and Gleam.
 
 ## Setup
 
@@ -9,6 +9,16 @@ nix develop
 nix fmt
 nix flake check
 ```
+
+## API
+
+```bash
+cd api
+gleam run
+gleam test
+```
+
+The Wisp API listens on port 8000 and exposes `GET /health`.
 
 `acc` is configured to use `oj` automatically from the dev shell.
 `pre-commit` hooks are installed automatically when you enter the dev shell.
@@ -35,6 +45,8 @@ acc templates
 - `acc`
 - `aclogin`
 - `acac`
+- `gleam`
+- `erlang`
 
 ## Nix Layout
 
